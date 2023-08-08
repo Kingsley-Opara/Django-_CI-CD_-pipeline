@@ -1,0 +1,39 @@
+name: Django Tests
+
+on:
+    pull_request:
+        branches:
+            - main
+
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Set up python 3.9.0
+              uses: actions/setup-python@v3
+              with:
+                python-version: 3.9.0
+            - name: Install dependencies
+              run: |
+                python -m venv venv
+                cd venv
+                ./bin/activate
+
+        # steps:
+        #     - uses: actions/checkout@v3
+        #     - uses: actions/setup-node@v3
+        #       with:
+        #         node-version: '14'
+        #     - run: npm install -g bats
+        #     - run: bats -v
+
+
+            
+            
+
+            
