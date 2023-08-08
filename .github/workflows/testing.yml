@@ -20,9 +20,11 @@ jobs:
                 python-version: 3.7
             - name: Install dependencies
               run: |
-                python -m venv venv
-                cd venv
-                ./bin/activate
+                pip install -r requirements.txt
+            - name: Run automated test
+              run: |
+                python manage.py test
+                
 
         # steps:
         #     - uses: actions/checkout@v3
